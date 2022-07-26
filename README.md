@@ -1,5 +1,5 @@
-# Projeto-PratOrgComp
-### Projeto Final de Prática de Organização Computacional
+# Projeto - Pratica Orgazição de Computadores
+## Projeto Final de Prática de Organização Computacional
 
 Nesta disciplina os alunos trabalharam com o caminho de dados das intruções de um processador feito pelo professor para o ICMC-USP, conhecendo o funcionamento de cada instrução, criando uma nova para ser adicionanda à arquitetura e montando um jogo na linguagem assembly fornecida.
 
@@ -10,9 +10,6 @@ A nova função em VHDL feita para o projeto foi a loadz (load-zero), que recebe
 ## O jogo em Assembly
 
 O jogo feito neste projeto é o famoso Conway's Gaem of Life (jogo da vida de Conway), com bordas esquerda e direita conectadas, tal como as bordas de cima e baixo. Células são pré-selecionadas como vivas ou mortas pelo jogador e quando colocado para rodar, o programa mata e cria células de acordo com as regras definadas por Conway.
-
-
-.... .....
 
 
 ## Simular o jogo no computador:
