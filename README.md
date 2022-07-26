@@ -3,11 +3,13 @@
 
 Nesta disciplina os alunos trabalharam com o caminho de dados das intruções de um processador feito pelo professor para o ICMC-USP, conhecendo o funcionamento de cada instrução, criando uma nova para ser adicionanda à arquitetura e montando um jogo na linguagem assembly fornecida.
 
-## A nova função em VHDL:	LOADZ Rx
+## A nova instrução para o processador:	LOADZ Rx
 
 A nova função em VHDL feita para o projeto foi a loadz (load-zero), que recebe como argumento um registrador e atribuí a ele o valor 0.
 
-### Código da nova função em VHDL
+### como a função funciona
+
+### Código da nova instrução em VHDL
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/quartus1.png)
 
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/quartus2.png)
@@ -27,14 +29,22 @@ A nova função em VHDL feita para o projeto foi a loadz (load-zero), que recebe
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/montador3.png)
 
 
-## O jogo em Assembly
+## O jogo
 
-O jogo feito neste projeto é o famoso Conway's Gaem of Life (jogo da vida de Conway), com bordas esquerda e direita conectadas, tal como as bordas de cima e baixo. Células são pré-selecionadas como vivas ou mortas pelo jogador e quando colocado para rodar, o programa mata e cria células de acordo com as regras definadas por Conway.
+O jogo feito neste projeto é o famoso Conway's Game of Life (jogo da vida de Conway), com bordas esquerda e direita conectadas, tal como as bordas de cima e baixo. Células são pré-selecionadas como vivas ou mortas pelo jogador e quando colocado para rodar, o programa mata e cria células de acordo com as regras definadas por Conway.
+
+As regras são simples:
+- Células tem como células vizinhas as 8 células que rodeiam ela, fornando todas juntas um quadrado 3x3 de células.
+- Caso uma célula tenha 3 vizinhos vivos, ela se torna ou se mantém viva.
+- Caso uma célula tenha 2 vizinhos vivos, elea se mantém viva ou morta.
+- Caso uma célula tenha mais que 3 vizinhos ou menos que dois, ela se torna ou se mantém morta.
 
 
 ## Simular o jogo no computador:
 
 Para jogar o jogo no computador deve ter-se instalado o simulador disponibilizado pelo professor Simões e, na pasta Simulador, incluir o arquivo .asm do jogo que disponibilizado. Feito isso, basta abrir o simulador com o executável do Sublime e abrir o arquivo .asm. Para compilar aperte F7, e, quando a janela do simulador abrir, basta aperte HOME para as etapas rodarem automaticamente.
+
+Células mortasas são representadas por '.' e células vias são representadas por '#'.
 
 ## Como jogar:
 
