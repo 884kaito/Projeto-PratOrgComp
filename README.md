@@ -56,3 +56,6 @@ Células mortasas são representadas por '.' e células vias são representadas 
 - Para ativar o jogo uma vez que as células tenham sido selecionadas basta apertar **r** para simular.
 - Para pausar o jogo e editar as células manualmente novamente, basta apertar **e**.
 - Para finalizar o jogo, aperta-se **h**.
+
+## Vídeo esxemplo
+[![Vídeo](https://i.imgur.com/vlCWWpp.png)](https://www.youtube.com/watch?v=HQm4HNBNiy4)
