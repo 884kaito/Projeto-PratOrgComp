@@ -9,6 +9,9 @@ A nova função em VHDL feita para o projeto foi a loadz (load-zero), que recebe
 
 ### como a função funciona
 
+Após ser selecionada na etapa de busca('fetch') o valor zero é passado diretamente para o MUX 4 que é selecionado como a entrada do Mux 1
+O sinal Rw é manadado como 0, o Mux 2 é ajustado para receber o valor no Mux 1 e enviar o valor para o registrador selecionado.
+
 ### Código da nova instrução em VHDL
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/quartus1.png)
 
