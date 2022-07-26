@@ -38,7 +38,7 @@ Para jogar o jogo no computador deve ter-se instalado o simulador disponibilizad
 
 ## Como jogar:
 
-- Uma vez inicializado o jogo, o jogador pode navegar as células para selecionar qual caracter quer alterar com as tecls **w**, **a**, **s** e **d**.
+- Uma vez inicializado o jogo, o jogador pode navegar as células para selecionar qual caracter quer alterar com as teclas **w**, **a**, **s** e **d**.
 - Para alterar a célula (de morta para viva ou de viva para morta) aperta-se o botão **c**.
 - Para ativar o jogo uma vez que as células tenham sido selecionadas basta apertar **r** para simular.
 - Para pausar o jogo e editar as células manualmente novamente, basta apertar **e**.
