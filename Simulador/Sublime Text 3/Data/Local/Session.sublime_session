@@ -28,11 +28,11 @@
 			"buffers":
 			[
 				{
-					"file": "/D/OneDrive/05_ESTUDOS/04_USP/SEMESTRE_03/SSC0119_PRAT_ORG_COMP/Simulador/conways.asm",
+					"file": "/D/OneDrive/06_DEPOSITO/02_WINDOWS/02_DOCUMENTOS/GitHub/Projeto-PratOrgComp/Simulador/conways.asm",
 					"settings":
 					{
-						"buffer_size": 9856,
-						"line_ending": "Unix"
+						"buffer_size": 21333,
+						"line_ending": "Windows"
 					}
 				}
 			],
@@ -68,8 +68,6 @@
 			},
 			"file_history":
 			[
-				"/D/OneDrive/05_ESTUDOS/04_USP/SEMESTRE_03/SSC0119_PRAT_ORG_COMP/conways.asm",
-				"/D/OneDrive/05_ESTUDOS/04_USP/SEMESTRE_03/SSC0119_PRAT_ORG_COMP/Simulador/conways.asm",
 				"/D/Simulador/Hello4.asm",
 				"/D/Teste Ambiente/Hello4.asm",
 				"/D/Teste Ambiente/leString.asm",
@@ -134,19 +132,19 @@
 					[
 						{
 							"buffer": 0,
-							"file": "/D/OneDrive/05_ESTUDOS/04_USP/SEMESTRE_03/SSC0119_PRAT_ORG_COMP/Simulador/conways.asm",
+							"file": "/D/OneDrive/06_DEPOSITO/02_WINDOWS/02_DOCUMENTOS/GitHub/Projeto-PratOrgComp/Simulador/conways.asm",
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 9856,
+								"buffer_size": 21333,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										484,
-										484
+										323,
+										323
 									]
 								],
 								"settings":
@@ -155,7 +153,7 @@
 									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
-								"translation.y": 504.0,
+								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
@@ -203,7 +201,7 @@
 			{
 				"height": 0.0
 			},
-			"position": "0,0,1,-1,-1,-1,-1,646,31,107,687",
+			"position": "0,2,3,-1,-1,-1,-1,646,31,107,687",
 			"project": "",
 			"replace":
 			{
