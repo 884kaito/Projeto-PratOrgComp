@@ -58,4 +58,4 @@ Células mortasas são representadas por '.' e células vias são representadas 
 - Para finalizar o jogo, aperta-se **h**.
 
 ## Vídeo esxemplo
-[![Vídeo](https://i.imgur.com/vlCWWpp.png)](https://www.youtube.com/watch?v=HQm4HNBNiy4)
+[![Vídeo]()](https://youtu.be/Q2f86QpXnTA)
