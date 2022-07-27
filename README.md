@@ -29,7 +29,7 @@ As células mortas são representadas por '.' e células vivas são representada
 - Para finalizar o jogo, aperta-se **h**.
 
 ### Vídeo de exemplo do funcionamento
-[![Vídeo do jogo]()](https://youtu.be/Q2f86QpXnTA)
+[Vídeo do jogo](https://youtu.be/Q2f86QpXnTA)
 
 
 ## A nova instrução para o processador:	LOADZ Rx
@@ -101,5 +101,5 @@ Para o teste, fizemos uma programa para aparecer o **Q** na posição 32 se a ex
 Para o teste, substituímos todas as instruções de **loadn rx, #0** por **loadz rx** e verificamos que não teve diferença no funcionamento das duas programas.
 
 ### Vídeo de explicação da mundança no processador
-[![Vídeo de explicação]()](https://youtu.be/7rQ4tk9GE24)
+[Vídeo de explicação](https://youtu.be/7rQ4tk9GE24)
 
