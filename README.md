@@ -78,7 +78,7 @@ Para a montagem, precisa compilar o programa que está na pasta Assembler_Source
  
  Para a execução precisa seguir seguintes passos.
  
- - Colocar o cpuram.mif na pasta Processor_Template_VHDL_DE0_CV.
+ - Colocar o cpuram.mif e Processador/cpu.vhd na pasta DE0_CV do seguinte link: https://github.com/simoesusp/Processador-ICMC/tree/master/Processor_FPGA/Processor_Template_VHDL_DE70.
  - Abrir o Quartus a partir do AP9.qpf na mesma pasta. 
  - Compilar e executar o programa no FPGA.
 
