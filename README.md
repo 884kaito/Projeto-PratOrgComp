@@ -100,4 +100,6 @@ Para o teste, fizemos uma programa para aparecer o **Q** na posição 32 se a ex
 
 Para o teste, substituímos todas as instruções de **loadn rx, #0** por **loadz rx** e verificamos que não teve diferença no funcionamento das duas programas.
 
+### Vídeo de explicação da mundança no processador
+[![Vídeo de explicação]()](https://youtu.be/7rQ4tk9GE24)
 
