@@ -16,6 +16,10 @@
 				"selected_items":
 				[
 					[
+						"loa",
+						"loadn	Load Num"
+					],
+					[
 						"digL",
 						"digLetra_Loop"
 					],
@@ -31,7 +35,7 @@
 					"file": "/D/OneDrive/06_DEPOSITO/02_WINDOWS/02_DOCUMENTOS/GitHub/Projeto-PratOrgComp/Simulador/conways.asm",
 					"settings":
 					{
-						"buffer_size": 21333,
+						"buffer_size": 23873,
 						"line_ending": "Windows"
 					}
 				}
@@ -68,6 +72,7 @@
 			},
 			"file_history":
 			[
+				"/D/OneDrive/06_DEPOSITO/02_WINDOWS/02_DOCUMENTOS/GitHub/Projeto-PratOrgComp/Simulador/Forca.asm",
 				"/D/Simulador/Hello4.asm",
 				"/D/Teste Ambiente/Hello4.asm",
 				"/D/Teste Ambiente/leString.asm",
@@ -92,7 +97,7 @@
 			],
 			"find":
 			{
-				"height": 32.0
+				"height": 43.0
 			},
 			"find_in_files":
 			{
@@ -106,6 +111,7 @@
 				"case_sensitive": false,
 				"find_history":
 				[
+					"inchar",
 					"r*",
 					"r3",
 					"r2",
@@ -136,15 +142,15 @@
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 21333,
+								"buffer_size": 23873,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										323,
-										323
+										0,
+										23873
 									]
 								],
 								"settings":
@@ -153,7 +159,7 @@
 									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
-								"translation.y": 0.0,
+								"translation.y": 1485.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
@@ -164,7 +170,7 @@
 			],
 			"incremental_find":
 			{
-				"height": 32.0
+				"height": 33.0
 			},
 			"input":
 			{
@@ -205,7 +211,7 @@
 			"project": "",
 			"replace":
 			{
-				"height": 60.0
+				"height": 62.0
 			},
 			"save_all_on_build": true,
 			"select_file":

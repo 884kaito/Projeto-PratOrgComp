@@ -11,9 +11,19 @@ jmp main
 
 
 
-
-
 ; ================/ VARIÁVEIS /================
+; Duas matrizes são usadas, uma é a matriz verdadeira e a outra é a auxiliar.
+;	Modificações só podem ser feitas na verdadeira e a auxiliar guarda os
+;	valores do estado anterior da matriz verdadeira para serem usados na
+;	simulação. Isso é feito, pois usar uma matriz como referência e modificá-la
+;	ao mesmo tempo não produz o resultado objetivado.
+; Para economizar recursos computacionais, ao invés de copiar os dados da
+;	matriz verdadeira para a auxiliar no começo de cada ciclo de simulação do
+;	jogo da vida, trocasse os títulos das matrizes. Ou seja, o buffer de
+;	memória chamado matrix_a pode receber o título de verdadeira em um ciclo,
+;	enquanto a matrix_b se torna a matrix auxiliar. Subsequentemente, no próximo
+;	ciclo,  os títulos se invertem, então a matrix_a é titulada como auxiliar e
+;	a matrix_b se torna a verdadeira.
 matrix_a: var #1200 ; proporções 40 x 30
 matrix_b: var #1200 ; proporções 40 x 30
 
@@ -34,7 +44,6 @@ main:
 	; ====/ INICIALIZANDO VARIÁVEIS
 	loadn r0, #matrix_b
 	loadn r1, #matrix_a
-	loadn r7, #7
 	
 	; ====/ CONFIGURANDO O ESTÁGIO INICIAL DA MATRIZ
 	main_edit_fase:
@@ -42,6 +51,7 @@ main:
 		call matrix_modify
 	
 	; ====/ LOOP DE EXECUÇÃO
+	loadn r4, #0
 	main_loop: ; tag para o loop principal
 		; TROCANDO AS MATRIZES DE LUGAR
 		mov r5, r0 ; SALVANDO O R0
@@ -55,7 +65,7 @@ main:
 		call matrix_print
 
 		; INPUT DO USUÁRIO
-		inchar r4	; Input do teclado.
+		inchar r4	; Buscando o input do usuário.
 
 		; BUSCANDO PELA CONDIÇÃO DE EDIÇÃO
 		loadn r5, #'e'
@@ -76,6 +86,56 @@ main:
 
 
 ; ================/ PROCEDIMENTOS /================
+
+; ========// GET CHAR
+; Lê um caracter da entrada padrão e espera até que o mesmo surja. Ou seja,
+;	espera até que algo seja digitado.
+;
+; Foi fortemente baseado (copiado) no procedimento digLetra do jogo da forca
+;	"Forca.asm".
+;
+; @return {character}	r7	caracter	Um caracter lido da entrada padrão.
+;
+getchar:	; Espera que uma tecla seja digitada e salva na variavel global "Letra"
+	; ====/ FAZE INICIAL
+	; SALVANDO REGISTRADORES
+	push r0
+	push r1
+	push r2
+	
+	; INICIALIZANDO CONSTANTES
+	; @const {character}	r0	CHAR_NIL	Constante caracter que guarda um
+	;	um valor que representa um caracter nulo, inexistente ou não recebido.
+	; @const {character}	r1			ZERO	Constante caracter que guarda o
+	;	valor zero.
+	loadn r1, #255	; Se nao digitar nada vem 255
+	loadn r2, #0	; Logo que programa a FPGA o inchar vem 0
+
+	; ====/ FASE DE EXECUÇÃO
+	; LOOP DE ESPERA ATÉ UMA LEITURA
+	getchar_Loop:
+		inchar r0			; Le o teclado, se nada for digitado = 255
+		cmp r0, r1			;compara r0 com 255
+		jeq getchar_Loop	; Fica lendo ate' que digite uma tecla valida
+		cmp r0, r2			;compara r0 com 0
+		jeq getchar_Loop	; Le novamente pois Logo que programa a FPGA o inchar vem 0
+
+	; SALVANDO O VALOR DE RETORNO
+	mov r7, r0			; Salva a tecla na variavel de retorno
+	
+	; LOOP DE LEITURA REPETIDA
+	; Esse loop vai esperar o usuário soltar a tecla.
+  	getchar_Loop2:	
+		inchar r0			; Le o teclado, se nada for digitado = 255
+		cmp r0, r1			;compara r0 com 255
+		jne getchar_Loop2	; Fica lendo ate' que digite uma tecla valida
+	
+	; ====/ FASE DE FINALIZAÇÃO 
+	pop r2
+	pop r1
+	pop r0
+	rts
+
 
 ; ========// MATRIX :: INIT
 ; Inicializa todas as células de uma tabela para serem iguais a celulas mortas.
@@ -161,7 +221,7 @@ matrix_print:
 	rts ; retorno
 
 
-; ========// MATRIX :: PRINT
+; ========// MATRIX :: MODIFY
 ; Modifica uma matriz.
 ;
 ; @param {address}	r0	MATRIX	Pointeiro para a matrix que será modificada.
@@ -185,7 +245,6 @@ matrix_modify:
 	add r2, r2, r0	; Guardando a posição do fim da matrix em um registrador
 	loadn r4, #255	; Guardando uma mascara na memória.
 	loadn r6, #40	; Inicializando r6 para ser o tamanho de uma linha.
-	loadn r7, #1200	; Inicializando r7 para ser o tamanho da tela.
 	
 	; INICIALIZANDO VARIÁVEIS
 	; @var {integer}	r1	Variável que indica a posição para a impressão na tela.
@@ -201,7 +260,8 @@ matrix_modify:
 		and r3, r3, r4	; Modificando a cor do caracter
 		outchar r3, r1 	; Impressão
 		
-		inchar r5	; Escutando pelo input do usuário
+		call getchar ; Esperando pelo input do usuário
+		mov r5, r7	; Movendo o valor de retorno para r5
 		
 		loadn r3, #'w' ; Carregando 'w' temporariamente
 		cmp r5, r3	; Comparando o input a 'w'
@@ -233,7 +293,6 @@ matrix_modify:
 		
 		jmp matrix_modify_loop ; Caso o usuário não tenha fornecido um input relevante
 		
-		
 		matrix_modify_pressed_w: ; INPUT == 'W'
 			cmp r1, r6	; Checando se o movimento é válido.
 			jle matrix_modify_loop
@@ -243,7 +302,8 @@ matrix_modify:
 			sub r1, r1, r6	; Pulando para a linha de cima (subtraindo 40).
 			sub r0, r0, r6	; Passando para a célula de cima memória.
 			
-			cmp r1, r7	; Checando se o movimento foi válido.
+			loadn r5, #1200	; Salvando temporariamente em r5 o tamanho da tela.
+			cmp r1, r5	; Checando se o movimento foi válido.
 			
 			jle matrix_modify_loop ; Voltando para o loop se tudo deu certo
 			
@@ -282,7 +342,8 @@ matrix_modify:
 			add r1, r1, r6	; Pulando para a linha de baixo (adicionando 40).
 			add r0, r0, r6	; Passando para a célula de baixo na memória.
 			
-			cmp r1, r7	; Checando se o movimento foi válido.
+			loadn r5, #1200	; Salvando temporariamente em r5 o tamanho da tela.
+			cmp r1, r5	; Checando se o movimento foi válido.
 			
 			jle matrix_modify_loop ; Voltando para o loop se tudo deu certo
 			
