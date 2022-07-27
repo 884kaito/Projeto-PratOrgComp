@@ -69,7 +69,7 @@ Para o teste, fizemos uma programa para aparecer o **Q** na posição 32 se a ex
 
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/conways.png)
 
-Para o teste, substituímos uma instrução de **loadn rx, #0** por **loadz rx** e verificamos que não teve diferença no funcionamento das duas programas.
+Para o teste, substituímos as instruções de **loadn rx, #0** por **loadz rx** e verificamos que não teve diferença no funcionamento das duas programas.
 
 ## O jogo
 
@@ -97,4 +97,4 @@ As células mortas são representadas por '.' e células vivas são representada
 - Para finalizar o jogo, aperta-se **h**.
 
 ### Vídeo de exemplo do funcionamento
-[![Vídeo]()](https://youtu.be/Q2f86QpXnTA)
+[![Vídeo do jogo]()](https://youtu.be/Q2f86QpXnTA)
