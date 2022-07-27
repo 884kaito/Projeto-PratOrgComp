@@ -7,12 +7,14 @@ Nesta disciplina os alunos trabalharam com o caminho de dados das intruções de
 
 A nova função em VHDL feita para o projeto foi a loadz (load-zero), que recebe como argumento um registrador e atribuí a ele o valor 0.
 
-### Código da nova instrução em VHDL
+### Mudanças feitas em VHDL para implementação
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/quartus1.png)
 
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/quartus2.png)
 
-### Teste em assembly da nova função em VHDL
+### Mudanças feitas no montador para implementação
+
+#### Mudanças no def.h
 
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/def1.png)
 
@@ -20,12 +22,21 @@ A nova função em VHDL feita para o projeto foi a loadz (load-zero), que recebe
 
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/def3.png)
 
+#### Mudanças no montador.c
+
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/montador1.png)
 
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/montador2.png)
 
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/montador3.png)
 
+#### Montagem e execução à partir do arquivo .asm
+
+##### Montagem
+
+### Teste da instrução
+
+Para verificar o funcionamento da nova instrução
 
 ## O jogo
 
