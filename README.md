@@ -29,7 +29,7 @@ As células mortas são representadas por '.' e células vivas são representada
 - Para finalizar o jogo, aperta-se **h**.
 
 ### Vídeo de exemplo do funcionamento
-[Vídeo do jogo](https://youtu.be/Q2f86QpXnTA)
+[Vídeo do jogo](https://youtu.be/3aDbKheCUSw)
 
 
 ## A nova instrução para o processador:	LOADZ Rx
