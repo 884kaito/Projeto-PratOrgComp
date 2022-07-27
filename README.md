@@ -30,13 +30,46 @@ A nova função em VHDL feita para o projeto foi a loadz (load-zero), que recebe
 
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/montador3.png)
 
-#### Montagem e execução à partir do arquivo .asm
+### Montagem e execução à partir do arquivo .asm
 
-##### Montagem
+#### Montagem
+
+Para a montagem, precisa compilar o programa que está na pasta Assembler_Source no gcc com seguinte comando:
+
+ gcc *.c -o main
+ 
+ Depois disso, precisa executar o programa com seguinte instrução:
+ 
+ ./main <arquivoEntrada.asm> <cpuram.mif>
+ 
+ Se conseguir executar corretamente, irá aparecer um arquivo cpuram.mif.
+ 
+ 
+ #### Execução
+ 
+ Para a execução precisa seguir seguintes passos.
+ 
+ - Colocar o cpuram.mif na pasta Processor_Template_VHDL_DE0_CV.
+ - Abrir o Quartus a partir do AP9.qpf na mesma pasta. 
+ - Compilar e executar o programa no FPGA.
 
 ### Teste da instrução
 
-Para verificar o funcionamento da nova instrução
+Para verificar o funcionamento da nova instrução nós fizemos dois instruções: uma com o teste.asm e outro com conways.asm. Os arquivos utilizados no teste estão na pasta Assembler_Source.
+
+#### Teste no teste.asm
+
+![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/teste.png)
+
+![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/teste_feito.jpeg)
+
+Para o teste, fizemos uma programa para aparecer o **Q** na posição 32 se a execução for executada corretamente, e apósa execução verificamos a aparição da letra **Q** na tela.
+
+#### Teste no conways.asm
+
+![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/conways.png)
+
+Para o teste, substituímos uma instrução de **loadn rx, #0** por **loadz rx** e verificamos que não teve diferença no funcionamento das duas programas.
 
 ## O jogo
 
@@ -49,13 +82,13 @@ As regras são simples:
 - Caso uma célula tenha mais que 3 vizinhos ou menos que dois, ela se torna ou se mantém morta.
 
 
-## Simular o jogo no computador:
+### Simular o jogo no computador:
 
 Para jogar o jogo no computador deve ter-se instalado o simulador disponibilizado pelo professor Simões e, na pasta Simulador, incluir o arquivo .asm do jogo que disponibilizado. Feito isso, basta abrir o simulador com o executável do Sublime e abrir o arquivo .asm. Para compilar aperte F7, e, quando a janela do simulador abrir, basta aperte HOME para as etapas rodarem automaticamente.
 
 As células mortas são representadas por '.' e células vivas são representadas por '#'.
 
-## Como jogar:
+### Como jogar:
 
 - Uma vez inicializado o jogo, o jogador pode navegar entre as células para selecionar qual caracter quer alterar com as teclas **w**, **a**, **s** e **d**.
 - Para alterar a célula (de morta para viva ou de viva para morta) aperta-se o botão **c**.
@@ -63,5 +96,5 @@ As células mortas são representadas por '.' e células vivas são representada
 - Para pausar o jogo e editar as células manualmente novamente, basta apertar **e**.
 - Para finalizar o jogo, aperta-se **h**.
 
-## Vídeo exemplo
+### Vídeo de exemplo do funcionamento
 [![Vídeo]()](https://youtu.be/Q2f86QpXnTA)
