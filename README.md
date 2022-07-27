@@ -10,7 +10,7 @@ A nova função em VHDL feita para o projeto foi a loadz (load-zero), que recebe
 ### Mudanças feitas em VHDL para implementação
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/quartus1.png)
 
-![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/quartus2.png)
+![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/quartus3.png)
 
 ### Mudanças feitas no montador para implementação
 
@@ -69,7 +69,7 @@ Para o teste, fizemos uma programa para aparecer o **Q** na posição 32 se a ex
 
 ![alt text](https://github.com/884kaito/Projeto-PratOrgComp/blob/main/Imagens/conways.png)
 
-Para o teste, substituímos as instruções de **loadn rx, #0** por **loadz rx** e verificamos que não teve diferença no funcionamento das duas programas.
+Para o teste, substituímos todas as instruções de **loadn rx, #0** por **loadz rx** e verificamos que não teve diferença no funcionamento das duas programas.
 
 ## O jogo
 
