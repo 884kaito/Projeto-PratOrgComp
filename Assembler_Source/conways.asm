@@ -801,4 +801,3 @@ cell_getLifeEnergy:
 		pop r4 ; devolvendo o valor antigo de r4
 		
 	rts ; retorno
-	
